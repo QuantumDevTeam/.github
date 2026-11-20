@@ -1,4 +1,4 @@
-![org-card](../Branding/logo_caption.svg)
+![org-card](../Branding/qdev_slogan_tags.svg)
 
 **Game engine and tools development.**
 
