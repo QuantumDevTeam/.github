@@ -1,0 +1,43 @@
+name: Restrict pull requests to the default branch
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  restrict:
+    if: vars.STELLAR_MIRROR != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr) return;
+            if (pr.base.ref !== 'master' && pr.base.ref !== 'main') return;
+
+            const { data } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: pr.user.login,
+            });
+
+            if (data.permission === 'admin' || data.permission === 'write') return;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: 'Please open this pull request against `develop`. The default branch is reserved for QuantumDevTeam members.',
+            });
+
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              state: 'closed',
+            });
