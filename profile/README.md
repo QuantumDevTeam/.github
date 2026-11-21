@@ -21,7 +21,7 @@ Pre-release. The current orchestra version is **0.10.0**. The engine already boo
 
 - Use the issue tracker of the component repository.
 - `StellarEngine-Mono` is a mirror; changes are made in the component repositories.
-- External contributions require the CLA in the component repository.
+- External contributions require the [CLA](https://github.com/QuantumDevTeam/.github/blob/master/licensing/CLA.md).
 - The engine is source-available, not OSI open source. Commercial use requires a separate agreement with QuantumDevTeam.
 
 ## Links

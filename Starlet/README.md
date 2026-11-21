@@ -42,3 +42,5 @@ The editor and the wider ecosystem — MirageAPI, Nebula, Chronos, Pulsar, Prome
 ## License
 
 PolyForm Noncommercial 1.0.0. The engine is source-available, not OSI open source. Commercial use requires a separate agreement with QuantumDevTeam.
+
+External contributions require the [CLA](https://github.com/QuantumDevTeam/.github/blob/master/licensing/CLA.md).
