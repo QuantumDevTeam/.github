@@ -2,7 +2,7 @@
 
 **Game engine and tools development.**
 
-We build [**StellarEngine**](../Starlet/Starlet.md) (codename **Starlet**) - a hypermodular engine for games and applications. It is written in C++23 and C#/.NET 9, Windows-first, and distributed as source under the PolyForm Noncommercial 1.0.0 license.
+We build [**StellarEngine**](../Starlet/README.md) (codename **Starlet**) - a hypermodular engine for games and applications. It is written in C++23 and C#/.NET 9, Windows-first, and distributed as source under the PolyForm Noncommercial 1.0.0 license.
 
 ## Repositories
 
